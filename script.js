@@ -44,6 +44,9 @@ const loadPhones =  async(searchText, dataLimit) => {
 
 
     phones.forEach(phone => {
+
+        console.log(phone)
+
     const phoneDiv = document.createElement('div');
 
         phoneDiv.classList.add('col')
@@ -56,7 +59,7 @@ const loadPhones =  async(searchText, dataLimit) => {
         <div class="card-body">
           <h5 class="card-title">${phone.phone_name}</h5>
           <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <button onclick="loadPhoneDetails('${phone.slug}')" class="btn btn-primary">Go SomeWhere </button>
+          <button onclick="loadPhoneDetails('${phone.slug}')" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Go SomeWhere </button>
         </div>
       </div>
         `
@@ -134,8 +137,27 @@ document.getElementById('search-field').addEventListener('keypress', function(e)
 
     const data = await res.json()
 
-    console.log(data)
+    displayPhonesDetails(data.data);
 
+  }
+
+  const displayPhonesDetails = phone => {
+
+  
+    const modalTitle = document.getElementById('exampleModalLabel');
+
+    modalTitle.innerText = phone.name;
+
+    const phonDetails = document.getElementById('phone-details')
+
+     
+    phonDetails.innerHTML = ` 
+    
+       <p>  ${phone.releaseDate}  </p>
+
+       
+
+    `
 
 
 
