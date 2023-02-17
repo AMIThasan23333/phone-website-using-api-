@@ -153,9 +153,13 @@ document.getElementById('search-field').addEventListener('keypress', function(e)
      
     phonDetails.innerHTML = ` 
     
-       <p>  ${phone.releaseDate}  </p>
+       <p> Release Date :   ${phone.releaseDate}  </p>
 
-       
+       <p>Storage : ${phone.mainFeatures ? phone.mainFeatures.storage : 'No storage Found'}
+       </p>
+       <p>   Others : ${phone.others ? phone.others.Bluetooth : 'No BlueTooth Information'} </p>
+
+
 
     `
 
