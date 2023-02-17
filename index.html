@@ -21,22 +21,27 @@
     <main class="container">
 
         <section>
-            <div id="phone-container">
-
-                <div class="row row-cols-1 row-cols-md-2 g-4">
-                    <div class="col">
-                      <div class="card">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        </div>
-                      </div>
-                    </div>
+            <div class="mb-3 w-50">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+               
+                    <input id="search-field" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="btn-search" class="btn btn-primary">Search </div>
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                   </div>
 
             </div>
         </section>
+
+        <section>
+            <div id="phone-container" class="row row-cols-1 row-cols-md-2 g-4">
+             
+              </div>
+        </section>
+
+        <div  id="no-phone" class="mt-4 d-none">
+            <h3 class="text-warning" > No Phone Found</h3>
+        </div>
 
     </main>
 
