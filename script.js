@@ -113,6 +113,19 @@ const loadPhones =  async(searchText, dataLimit) => {
 
 
 
+// search input field
+
+
+document.getElementById('search-field').addEventListener('keypress', function(e) {
+
+    console.log(e.key)
+    if(e.key === 'Enter'){
+
+        processSearch(10)
+    }
+})
+
+
   const loadPhoneDetails = async id => {
 
     const url = `https://openapi.programming-hero.com/api/phone/${id}`;
