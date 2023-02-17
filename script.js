@@ -29,6 +29,7 @@ const loadPhones =  async(searchText) => {
 
         noPhone.classList.remove('d-none')
         console.log("first")
+        tootleSpinner(false)
     }
 
     else{
@@ -55,22 +56,25 @@ const loadPhones =  async(searchText) => {
         `
 
         phoneContainer.appendChild(phoneDiv)
+
+       
     })
+
+    tootleSpinner(false)
 
    }
 
 
 
   document.getElementById('btn-search').addEventListener('click', function(){
-
     // start loader
+    tootleSpinner(true)
 
-     
-     const searchField = document.getElementById('search-field');
+    const searchField = document.getElementById('search-field');
 
     const searchText = searchField.value;
  
-     loadPhones(searchText)
+    loadPhones(searchText)
 
   })
 
@@ -84,7 +88,10 @@ const loadPhones =  async(searchText) => {
 
         loaderSection.classList.remove('d-none')
     }
+     else{
 
+        loaderSection.classList.add('d-none')
+     }
   }
 
 // loadPhones();
