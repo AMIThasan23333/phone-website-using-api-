@@ -31,6 +31,11 @@ const loadPhones =  async(searchText) => {
         console.log("first")
     }
 
+    else{
+
+        noPhone.classList.add('d-none')
+    }
+
 
     phones.forEach(phone => {
     const phoneDiv = document.createElement('div');
@@ -58,14 +63,28 @@ const loadPhones =  async(searchText) => {
 
   document.getElementById('btn-search').addEventListener('click', function(){
 
-    const searchField = document.getElementById('search-field');
+    // start loader
+
+     
+     const searchField = document.getElementById('search-field');
 
     const searchText = searchField.value;
-
-
-  loadPhones(searchText)
+ 
+     loadPhones(searchText)
 
   })
 
+
+  const tootleSpinner = isLoading => {
+
+  
+    const loaderSection = document.getElementById('spinner')
+
+    if(isLoading){
+
+        loaderSection.classList.remove('d-none')
+    }
+
+  }
 
 // loadPhones();
